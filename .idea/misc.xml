@@ -27,6 +27,7 @@
         <entry key="app/src/main/res/layout/drawer_item.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.256198347107438" />
+        <entry key="app/src/main/res/layout/fragment_locate.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/modal_user_sheet.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.165" />
       </map>
