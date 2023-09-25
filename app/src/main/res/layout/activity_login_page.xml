@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".activities.LoginPage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:background="@drawable/gradient_red">
+
+                <ImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/ic_ic3"
+                    android:layout_alignParentEnd="true"
+                    android:scaleType="matrix"
+                    android:rotation="270"
+                    app:tint="#5C1013" />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/back"
+                    android:id="@+id/back"
+                    android:layout_margin="20dp"/>
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:layout_width="270dp"
+                    android:layout_height="270dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="40dp"
+                    android:id="@+id/anim"
+                    app:lottie_loop="true"
+                    app:lottie_autoPlay="true"
+                    app:lottie_speed="1"
+                    app:lottie_fileName="animation5.json"/>
+
+                <LinearLayout
+                    android:id="@+id/text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/anim"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/white_card" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratbold"
+                        android:text="Welcome"
+                        android:textColor="#fff"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratregular"
+                        android:text="to CareKojo Mobile"
+                        android:textColor="#fff"
+                        android:textSize="22dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="30dp"
+                        android:fontFamily="@font/montserratmedium"
+                        android:lineSpacingExtra="5dp"
+                        android:text="Carekojo provides you with a wide range of services tailored to bring healthcare closer to patients."
+                        android:textColor="#fff"
+                        android:textSize="12dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F8F8F8"
+                    android:padding="20dp"
+                    android:layout_below="@+id/text">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="false"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Email"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#707070"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Password"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Login"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Forgot Password?"
+                        android:textSize="14dp"
+                        android:id="@+id/forgotPassword"
+                        android:fontFamily="@font/montserratregular"
+                        android:textColor="@color/red"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:id="@+id/linsignup"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="30dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="You do not have an Account? "
+                            android:textSize="14dp"
+                            android:fontFamily="@font/montserratregular"
+                            android:textColor="#707070"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SignUp"
+                            android:textSize="14dp"
+                            android:fontFamily="@font/montserratregular"
+                            android:textColor="@color/red"/>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

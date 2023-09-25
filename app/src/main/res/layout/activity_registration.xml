@@ -1,0 +1,1900 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    tools:context=".activities.Registration">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_ic3"
+        android:layout_alignParentEnd="true"
+        android:scaleType="matrix"
+        android:rotation="270"
+        app:tint="#707070" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstView"
+        android:visibility="visible">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Register"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/bar"
+            android:layout_margin="20dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Step 1 of 2"
+                android:textColor="@color/red"
+                android:textSize="15dp"
+                android:fontFamily="@font/montserratmedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carekojo provides you with a wide range of services tailored to bring healthcare closer to you."
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                android:layout_marginBottom="30dp"
+                android:fontFamily="@font/montserratmedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose type of user"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:fontFamily="@font/montserratsemibold"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/userType"
+                android:background="@drawable/white_card2">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Start As:"
+                        android:textColor="@color/red"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="..."
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratmedium"
+                        android:textSize="13dp"
+                        android:id="@+id/user"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/next"
+                android:text="Continue"
+                android:textColor="#fff"
+                android:textSize="14dp"
+                android:fontFamily="@font/montserratregular"
+                android:textAllCaps="false"
+                android:background="@drawable/button_orange"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:id="@+id/signin"
+                android:padding="10dp"
+                android:layout_marginBottom="30dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Already have an Account? "
+                    android:textSize="14dp"
+                    android:fontFamily="@font/montserratregular"
+                    android:textColor="#707070"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Signin"
+                    android:textSize="14dp"
+                    android:fontFamily="@font/montserratregular"
+                    android:textColor="@color/red"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/patientRegistration"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar2"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back2"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Patient Registration"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar2">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step 2 of 2"
+                        android:textColor="@color/red"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Fields are required to proceed with the completion of registration"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="First Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Last Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Display Name (Username) *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Email *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Phone Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select State"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Local Government Area"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Confirm Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/next1"
+                        android:text="Sign up"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="When I sign up, I accept the "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="terms and conditions "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="and data "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="privacy"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/doctorRegistration"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar3"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back3"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doctor Registration"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar3">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step 2 of 2"
+                        android:textColor="@color/red"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Fields are required to proceed with the completion of registration"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Doctor ID Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="First Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Last Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Display Name (Username) *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Email *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Phone Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Medical Facility Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select Specialty"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select State"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Local Government Area"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Confirm Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/next2"
+                        android:text="Sign up"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="When I sign up, I accept the "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="terms and conditions "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="and data "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="privacy"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hospitalRegistration"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar4"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back4"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hospital Registration"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar4">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step 2 of 2"
+                        android:textColor="@color/red"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Fields are required to proceed with the completion of registration"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility UID Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Display Name (Username) *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Email *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Phone Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select State"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Local Government Area"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Confirm Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/next3"
+                        android:text="Sign up"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="When I sign up, I accept the "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="terms and conditions "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="and data "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="privacy"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pharmacyRegistration"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar5"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back5"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pharmacy Registration"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar5">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Step 2 of 2"
+                        android:textColor="@color/red"
+                        android:textSize="15dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Fields are required to proceed with the completion of registration"
+                        android:textColor="@color/black"
+                        android:textSize="13dp"
+                        android:layout_marginBottom="20dp"
+                        android:fontFamily="@font/montserratmedium"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Name *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility ID Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Display Name (Username) *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textCapSentences"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Email *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="#058523"
+                        app:passwordToggleDrawable="@drawable/circle_check"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Facility Phone Number *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="number"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Will you Conduct Deliveries?*"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Select State"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="35dp"
+                        android:background="@drawable/white_card2">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Local Government Area"
+                                android:textColor="@color/red"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:textSize="12dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="..."
+                                android:paddingTop="5dp"
+                                android:paddingBottom="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/montserratmedium"
+                                android:textSize="13dp"/>
+                        </LinearLayout>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/arrow_down"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"/>
+                    </RelativeLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/red">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@android:color/transparent"
+                            android:hint="Confirm Password *"
+                            android:textColor="#000000"
+                            android:textSize="12dp"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:fontFamily="@font/montserratsemibold"/>
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/next4"
+                        android:text="Sign up"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="When I sign up, I accept the "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="terms and conditions "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="-10dp"
+                        android:layout_marginBottom="30dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="and data "
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#707070"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="privacy"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"
+                            android:layout_marginTop="10dp"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verify"
+        android:visibility="gone">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#70ffffff"
+            android:id="@+id/bar6"
+            android:padding="20dp">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/back"
+                app:tint="@color/black"
+                android:id="@+id/back6"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verify User"
+                android:textColor="#200F0F"
+                android:fontFamily="@font/montserratsemibold"
+                android:layout_alignParentStart="true"
+                android:textSize="24dp"/>
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bar6">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_margin="20dp">
+
+                    <ImageView
+                        android:layout_width="205dp"
+                        android:layout_height="179.94dp"
+                        android:src="@drawable/plane"
+                        android:layout_marginTop="60dp"
+                        android:layout_gravity="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="E-mail Sent!"
+                        android:textSize="20dp"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textColor="#130102"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="60dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Please confirm your email at"
+                            android:textSize="13dp"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserratmedium"
+                            android:textColor="#000000"
+                            android:layout_marginTop="10dp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="abayomi.akinseye@e4email.net"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#B72025"/>
+                    </LinearLayout>
+
+
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/login"
+                        android:text="Back to Login"
+                        android:textColor="#fff"
+                        android:textSize="14dp"
+                        android:fontFamily="@font/montserratregular"
+                        android:textAllCaps="false"
+                        android:background="@drawable/button_orange"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Your did you not receive an email? Check your spam or folders or request a new Mail."
+                            android:textSize="13dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="#000000"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_marginBottom="30dp">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Resend Mail"
+                            android:textSize="13dp"
+                            android:fontFamily="@font/montserratsemibold"
+                            android:textColor="@color/red"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:src="@drawable/ic_ic3"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:scaleType="matrix"
+        android:rotation="90"
+        app:tint="#90707070" />
+
+</RelativeLayout>

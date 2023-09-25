@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/button_orange.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/button_yello.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/card_white.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/circle_check.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/corner_popup.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/gradient_red.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/half_circle.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/ic_dashboard.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/ic_home.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/ic_ic3.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/search_bg.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/white_card.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/white_card2.xml" value="0.115" />
+        <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_guest_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_login_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1895228068033854" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/drawer_item.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.256198347107438" />
+        <entry key="app/src/main/res/layout/modal_user_sheet.xml" value="0.28125" />
+        <entry key="app/src/main/res/layout/slide_layout.xml" value="0.165" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
