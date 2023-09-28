@@ -9,25 +9,30 @@
         <entry key="app/src/main/res/drawable/circle_check.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/corner_popup.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/gradient_red.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/gradient_red_bg.xml" value="0.131" />
         <entry key="app/src/main/res/drawable/half_circle.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_dashboard.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_ic3.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/search_bg.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/selected.xml" value="0.131" />
         <entry key="app/src/main/res/drawable/spinner_bg.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/white_card.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/white_card2.xml" value="0.115" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.28229166666666666" />
-        <entry key="app/src/main/res/layout/activity_guest_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_guest_page.xml" value="0.11" />
         <entry key="app/src/main/res/layout/activity_login_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1895228068033854" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_side_menu.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.165" />
         <entry key="app/src/main/res/layout/drawer_item.xml" value="0.28125" />
-        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.256198347107438" />
         <entry key="app/src/main/res/layout/fragment_locate.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/modal_please_login.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/modal_specialities.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/modal_user_sheet.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/slide_layout.xml" value="0.165" />
       </map>

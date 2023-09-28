@@ -2,9 +2,15 @@ package ng.com.carekojo.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,9 +22,8 @@ import android.widget.Toast;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
 import ng.com.carekojo.R;
-import ng.com.carekojo.sheets.UserType;
 
-public class Registration extends AppCompatActivity implements UserType.BottomSheetListener{
+public class Registration extends AppCompatActivity {
 
     ImageView back;
     RelativeLayout userType;
@@ -52,8 +57,7 @@ public class Registration extends AppCompatActivity implements UserType.BottomSh
         userType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserType bottomSheet = new UserType();
-                bottomSheet.show(getSupportFragmentManager(), "UserTypeBottomSheet");
+                showDialog();
             }
         });
         user = findViewById(R.id.user);
@@ -79,7 +83,7 @@ public class Registration extends AppCompatActivity implements UserType.BottomSh
                 }else if (type.equals("Doctor")){
                     //show doctors view
                     doctorReg();
-                }else if (type.equals("Hospital")){
+                }else if (type.equals("Hospitals/Clinics")){
                     //show hospital view
                     hospitalReg();
                 }else if (type.equals("Pharmacist")){
@@ -90,9 +94,51 @@ public class Registration extends AppCompatActivity implements UserType.BottomSh
         });
     }
 
-    @Override
-    public void onButtonClicked(String text) {
-        user.setText(text);
+    private void showDialog() {
+        Dialog dialog = new Dialog(Registration.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.modal_user_sheet);
+
+        TextView patient = dialog.findViewById(R.id.patient);
+        TextView doctor = dialog.findViewById(R.id.doctor);
+        TextView hospital = dialog.findViewById(R.id.hospital);
+        TextView pharmacist = dialog.findViewById(R.id.pharmacist);
+
+        patient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setText("Patient");
+                dialog.dismiss();
+            }
+        });
+        doctor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setText("Doctor");
+                dialog.dismiss();
+            }
+        });
+        hospital.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setText("Hospitals/Clinics");
+                dialog.dismiss();
+            }
+        });
+        pharmacist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                user.setText("Pharmacist");
+                dialog.dismiss();
+            }
+        });
+
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
 
 

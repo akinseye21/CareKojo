@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/linearbg"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/linearbg2"
+        android:paddingTop="20dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/corner_popup">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ooops!"
+            android:layout_gravity="center_horizontal"
+            android:textSize="22dp"
+            android:textColor="@color/red"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="70dp"
+            android:fontFamily="@font/montserratbold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Please Login First"
+            android:textColor="#707070"
+            android:textSize="16dp"
+            android:id="@+id/patient"
+            android:fontFamily="@font/montserratregular" />
+
+        <Button
+            android:layout_width="197dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/login"
+            android:layout_gravity="center"
+            android:text="Login"
+            android:textColor="#fff"
+            android:textSize="14dp"
+            android:fontFamily="@font/montserratregular"
+            android:textAllCaps="false"
+            android:background="@drawable/button_orange"/>
+
+    </LinearLayout>
+
+</LinearLayout>

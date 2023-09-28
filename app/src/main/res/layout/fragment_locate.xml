@@ -3,8 +3,838 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.LocateFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:scrollbars="none">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6 Results Found"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:fontFamily="@font/montserratmedium"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Location"
+                android:textSize="16dp"
+                android:textColor="#707070"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserratmedium"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="35dp"
+                android:background="@drawable/white_card2"
+                android:onClick="pleaseLogin">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Select State"
+                        android:textColor="#90B72025"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="..."
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="35dp"
+                android:background="@drawable/white_card2"
+                android:onClick="pleaseLogin">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Local Government Area"
+                        android:textColor="#90B72025"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textSize="12dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="..."
+                        android:paddingTop="5dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:textSize="12dp"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/arrow_down"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Advanced Search"
+                    android:textSize="12dp"
+                    android:textColor="#707070"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/montserratsemibold"/>
+                <View
+                    android:layout_width="108dp"
+                    android:layout_height="0.5dp"
+                    android:background="#707070"/>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_card">
+                <Button
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/selected"
+                    android:text="Near you"
+                    android:textAllCaps="false"
+                    android:textColor="@color/red"
+                    android:textSize="14dp"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/nearyou"
+                    android:onClick="pleaseLogin"
+                    android:fontFamily="@font/montserratregular"/>
+
+                <Button
+                    android:id="@+id/others"
+                    android:layout_width="130dp"
+                    android:layout_height="50dp"
+                    android:layout_toRightOf="@+id/nearyou"
+                    android:background="@null"
+                    android:fontFamily="@font/montserratregular"
+                    android:text="Others"
+                    android:textAllCaps="false"
+                    android:textColor="#707070"
+                    android:onClick="pleaseLogin"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4 Medical Practitioners Near you."
+                android:textSize="14dp"
+                android:textColor="#B72025"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserratmedium"/>
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:background="@drawable/white_card"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="20dp"
+                    android:onClick="pleaseLogin">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_logo"
+                            app:civ_border_color="@color/red"
+                            app:civ_border_width="1dp" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:src="@drawable/ic_logo" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Dr. Fisayo Olatunji"
+                        android:textColor="#707070"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:paddingTop="5dp"
+                        android:text="Physiotherapist"
+                        android:textColor="#707070A6"
+                        android:textSize="10dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/chat" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="English, Yoruba"
+                                android:textColor="#707070"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/building" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Grace of God Maitama"
+                                android:textColor="#707070"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/money" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="NGN5000"
+                                android:textColor="@color/red"
+                                android:textSize="10dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Available Today"
+                        android:textColor="#058523"
+                        android:textSize="10dp" />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/white_card"
+                    android:onClick="pleaseLogin">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_logo"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/red"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_logo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Dr. Fisayo Olatunji"
+                        android:textSize="12dp"
+                        android:textColor="#707070"
+                        android:layout_marginTop="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Physiotherapist"
+                        android:textSize="10dp"
+                        android:textColor="#707070A6"
+                        android:paddingTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/chat"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="English, Yoruba"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/building"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Grace of God Maitama"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/money"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NGN5000"
+                                android:textColor="@color/red"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Now"
+                        android:textSize="10dp"
+                        android:textColor="#058523"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:layout_marginTop="20dp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="20dp">
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/white_card"
+                    android:onClick="pleaseLogin">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_logo"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/red"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_logo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Dr. Fisayo Olatunji"
+                        android:textSize="12dp"
+                        android:textColor="#707070"
+                        android:layout_marginTop="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Physiotherapist"
+                        android:textSize="10dp"
+                        android:textColor="#707070A6"
+                        android:paddingTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/chat"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="English, Yoruba"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/building"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Grace of God Maitama"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/money"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NGN5000"
+                                android:textColor="@color/red"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Available Today"
+                        android:textSize="10dp"
+                        android:textColor="#058523"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:layout_marginTop="20dp"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/white_card"
+                    android:onClick="pleaseLogin">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="70dp">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/ic_logo"
+                            app:civ_border_width="1dp"
+                            app:civ_border_color="@color/red"/>
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/ic_logo"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentBottom="true"/>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Dr. Fisayo Olatunji"
+                        android:textSize="12dp"
+                        android:textColor="#707070"
+                        android:layout_marginTop="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Physiotherapist"
+                        android:textSize="10dp"
+                        android:textColor="#707070A6"
+                        android:paddingTop="5dp"/>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:gravity="left">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/chat"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="English, Yoruba"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/building"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Grace of God Maitama"
+                                android:textColor="#707070"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+                            <ImageView
+                                android:layout_width="11dp"
+                                android:layout_height="11dp"
+                                android:src="@drawable/money"
+                                android:layout_gravity="center_vertical"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="NGN5000"
+                                android:textColor="@color/red"
+                                android:textSize="10dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:layout_marginLeft="10dp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Book Now"
+                        android:textSize="10dp"
+                        android:textColor="#058523"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:layout_marginTop="20dp"/>
+
+                </LinearLayout>
+            </RelativeLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2 Medical Institutions Near you."
+                android:textSize="14dp"
+                android:textColor="#B72025"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/montserratmedium"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/white_card2"
+                android:onClick="pleaseLogin">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/one">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/person"
+                        app:civ_border_color="@color/red"
+                        app:civ_border_width="1dp" />
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_logo"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/one">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Saints Grammar School"
+                        android:textSize="14dp"
+                        android:textColor="#707070"
+                        android:fontFamily="@font/montserratsemibold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Garki Area 11, Abuja"
+                        android:textSize="12dp"
+                        android:textColor="#707070A6"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserratsemibold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10km Near you"
+                        android:textSize="12dp"
+                        android:textColor="#B72020"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserratsemibold"/>
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/more"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/white_card2"
+                android:onClick="pleaseLogin">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/two">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/person"
+                        app:civ_border_width="1dp"
+                        app:civ_border_color="@color/red"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/star"/>
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_logo"
+                        android:layout_centerHorizontal="true"
+                        android:layout_alignParentBottom="true"/>
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toRightOf="@+id/two">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="All Saints Grammar School"
+                        android:textSize="14dp"
+                        android:textColor="#707070"
+                        android:fontFamily="@font/montserratsemibold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Garki Area 11, Abuja"
+                        android:textSize="12dp"
+                        android:textColor="#707070A6"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserratsemibold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10km Near you"
+                        android:textSize="12dp"
+                        android:textColor="#B72020"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/montserratsemibold"/>
+
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/more"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

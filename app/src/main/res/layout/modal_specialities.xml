@@ -14,11 +14,12 @@
         android:paddingTop="20dp"
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/corner_popup">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sigin As:"
+            android:text="Specialties"
             android:layout_gravity="center_horizontal"
             android:textSize="20dp"
             android:textColor="@color/red"
@@ -26,44 +27,85 @@
             android:fontFamily="@font/montserratsemibold"/>
 
         <TextView
+            android:id="@+id/generalmedicine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Patient"
+            android:fontFamily="@font/montserratbold"
+            android:padding="15dp"
+            android:text="General Medicine"
+            android:textColor="#707070"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cardiologist"
             android:textColor="#707070"
             android:textSize="16dp"
-            android:id="@+id/patient"
+            android:id="@+id/cardiologist"
             android:fontFamily="@font/montserratbold"
             android:padding="15dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Doctors"
+            android:text="Dentist"
             android:textColor="#707070"
             android:textSize="16dp"
-            android:id="@+id/doctor"
+            android:id="@+id/dentist"
             android:fontFamily="@font/montserratbold"
             android:padding="15dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hospitals/Clinics"
+            android:text="Audio-vestibular Medicine"
             android:textColor="#707070"
             android:textSize="16dp"
-            android:id="@+id/hospital"
+            android:id="@+id/vestmedicine"
             android:fontFamily="@font/montserratbold"
             android:padding="15dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pharmacist"
+            android:text="Dermatologist"
             android:textColor="#707070"
             android:textSize="16dp"
-            android:id="@+id/pharmacist"
+            android:id="@+id/dermatologist"
             android:fontFamily="@font/montserratbold"
             android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Emergency Medicine"
+            android:textColor="#707070"
+            android:textSize="16dp"
+            android:id="@+id/emergencymedicine"
+            android:fontFamily="@font/montserratbold"
+            android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Family Medicine"
+            android:textColor="#707070"
+            android:textSize="16dp"
+            android:id="@+id/familymedicine"
+            android:fontFamily="@font/montserratbold"
+            android:padding="15dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="General Practitioner"
+            android:textColor="#707070"
+            android:textSize="16dp"
+            android:id="@+id/generalpractitioner"
+            android:fontFamily="@font/montserratbold"
+            android:padding="15dp"/>
+
     </LinearLayout>
 
 </LinearLayout>

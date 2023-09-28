@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F8F8"
+    android:id="@+id/container"
+    android:fitsSystemWindows="true"
     tools:context=".activities.GuestPage">
 
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
         android:id="@+id/drawer_layout">
 
         <RelativeLayout
@@ -76,6 +79,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:background="@android:color/white"
+            android:fitsSystemWindows="true"
             android:layout_gravity="start">
 
             <!-- Custom drawer items will be added here dynamically -->

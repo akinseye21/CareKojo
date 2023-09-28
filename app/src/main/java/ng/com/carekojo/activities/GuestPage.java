@@ -7,17 +7,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -29,13 +38,11 @@ import ng.com.carekojo.fragments.DashboardFragment;
 import ng.com.carekojo.fragments.HomeFragment;
 import ng.com.carekojo.fragments.LocateFragment;
 
-public class GuestPage extends AppCompatActivity {
+public class GuestPage extends AppCompatActivity implements
+        HomeFragment.OnFragmentInteractionListener {
 
     private TabLayout tabLayout;
     ViewPager viewPager;
-    DrawerLayout drawerLayout;
-    LinearLayout drawerItemsLayout;
-    private View overlayView;
     ImageView menu;
 
     @Override
@@ -53,6 +60,26 @@ public class GuestPage extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#B72020")));
+//                if (tab.getPosition()==1){
+//                    Dialog dialog = new Dialog(GuestPage.this);
+//                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+//                    dialog.setContentView(R.layout.modal_please_login);
+//
+//                    Button login = dialog.findViewById(R.id.login);
+//                    login.setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View view) {
+//                            dialog.dismiss();
+//                            startActivity(new Intent(GuestPage.this, LoginPage.class));
+//                        }
+//                    });
+//
+//                    dialog.show();
+//                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+//                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+//                    dialog.getWindow().setGravity(Gravity.BOTTOM);
+//                }
             }
 
             @Override
@@ -67,71 +94,14 @@ public class GuestPage extends AppCompatActivity {
         });
         setupTabIcons();
 
-        overlayView = findViewById(R.id.overlayView);
-        drawerLayout = findViewById(R.id.drawer_layout);
-        drawerItemsLayout = findViewById(R.id.drawer_items_layout);
-        createDrawerItem();
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        toggle.setDrawerIndicatorEnabled(true);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
-        overlayView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Close the drawer when the overlay is clicked
-                drawerLayout.closeDrawers();
-            }
-        });
-        drawerLayout.addDrawerListener(new DrawerLayout.SimpleDrawerListener() {
-            @Override
-            public void onDrawerOpened(View drawerView) {
-                overlayView.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onDrawerClosed(View drawerView) {
-                overlayView.setVisibility(View.GONE);
-            }
-        });
-
         menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                drawerLayout.openDrawer(GravityCompat.START);
+                startActivity(new Intent(GuestPage.this, SideMenu.class));
+//                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
             }
         });
-    }
-
-    private void createDrawerItem() {
-        // Inflate the drawer item layout
-        View drawerItem = getLayoutInflater().inflate(R.layout.drawer_item, drawerItemsLayout, false);
-
-        TextView close = drawerItem.findViewById(R.id.close);
-        LinearLayout login = drawerItem.findViewById(R.id.linlogin);
-        LinearLayout signup = drawerItem.findViewById(R.id.linsignup);
-        LinearLayout aboutus = drawerItem.findViewById(R.id.linaboutus);
-        LinearLayout blog = drawerItem.findViewById(R.id.linblog);
-        LinearLayout support = drawerItem.findViewById(R.id.linsupport);
-        LinearLayout faq = drawerItem.findViewById(R.id.linfaq);
-        LinearLayout terms = drawerItem.findViewById(R.id.linterms);
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(GuestPage.this, LoginPage.class));
-            }
-        });
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(GuestPage.this, Registration.class));
-            }
-        });
-
-        // Add the item to the drawer layout
-        drawerItemsLayout.addView(drawerItem);
     }
 
     private void setupTabIcons() {
@@ -142,15 +112,21 @@ public class GuestPage extends AppCompatActivity {
 
     private void addTabs(ViewPager viewPager) {
         GuestPage.ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new HomeFragment(), "Home");
-        adapter.addFrag(new DashboardFragment(), "Dashboard");
-        adapter.addFrag(new LocateFragment(), "Locate");
+        adapter.addFrag(new HomeFragment(), "Home", 0);
+        adapter.addFrag(new DashboardFragment(), "Dashboard", 1);
+        adapter.addFrag(new LocateFragment(), "Locate", 2);
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 
     static class ViewPagerAdapter extends FragmentStatePagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
+        private final List<Integer> mFragmenttag = new ArrayList<>();
 
 
         public ViewPagerAdapter(FragmentManager fm) {
@@ -167,9 +143,10 @@ public class GuestPage extends AppCompatActivity {
             return mFragmentList.size();
         }
 
-        public void addFrag(Fragment fragment, String title){
+        public void addFrag(Fragment fragment, String title, int tag){
             mFragmentList.add(fragment);
             mFragmentTitleList.add(title);
+            mFragmenttag.add(tag);
         }
 
         @Override
@@ -182,4 +159,26 @@ public class GuestPage extends AppCompatActivity {
     public void onBackPressed() {
         //do nothing
     }
+
+    public void pleaseLogin(View view) {
+        Dialog dialog = new Dialog(GuestPage.this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.modal_please_login);
+
+        Button login = dialog.findViewById(R.id.login);
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+                startActivity(new Intent(GuestPage.this, LoginPage.class));
+            }
+        });
+
+        dialog.show();
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        dialog.getWindow().setGravity(Gravity.BOTTOM);
+    }
+
 }
