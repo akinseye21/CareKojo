@@ -21,4 +21,9 @@
         <item name="fontFamily">@font/montserratsemibold</item>
         <item name="iconSize">16dp</item>
     </style>
+
+    <style name="CustomScrollbarStyle">
+        <item name="android:scrollbarThumbVertical">@color/red</item>
+        <item name="android:scrollbarTrackVertical">@color/light_grey</item>
+    </style>
 </resources>

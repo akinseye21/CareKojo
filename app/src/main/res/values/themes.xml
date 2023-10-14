@@ -27,4 +27,9 @@
         <item name="android:windowExitAnimation">@anim/slide_out_down</item>
     </style>
 
+    <style name="CustomScrollbarStyle">
+        <item name="android:scrollbarThumbVertical">@color/red</item>
+        <item name="android:scrollbarTrackVertical">@color/light_grey</item>
+    </style>
+
 </resources>

@@ -47,7 +47,6 @@ public class HomeFragment extends Fragment {
         specialties.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Dialog dialog = new Dialog(getContext());
                 dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
                 dialog.setContentView(R.layout.modal_specialities);

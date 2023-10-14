@@ -234,6 +234,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="First Name *"
+                            android:id="@+id/patientFirstName"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -256,6 +257,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Last Name *"
+                            android:id="@+id/patientLastName"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -278,6 +280,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Display Name (Username) *"
+                            android:id="@+id/patientUsername"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -285,62 +288,89 @@
                             android:fontFamily="@font/montserratsemibold"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Email *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputPatientEmail"
+                            android:layout_toLeftOf="@+id/checkPatientEmail"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Email *"
+                                android:id="@+id/edtPatientEmail"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
 
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkPatientEmail"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Phone Number *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="number"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputPatientPhone"
+                            android:layout_toLeftOf="@+id/checkPatientPhone"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Phone Number *"
+                                android:id="@+id/edtPatientPhoneNumber"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkPatientPhone"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectStatePatient"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -358,6 +388,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedStatePatient"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -377,6 +408,7 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectLGAPatient"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -394,6 +426,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedLgaPatient"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -423,6 +456,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Password *"
+                            android:id="@+id/edtPasswordPatient"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textPassword"
@@ -446,6 +480,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Confirm Password *"
+                            android:id="@+id/edtConfirmPasswordPatient"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textPassword"
@@ -455,17 +490,34 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <Button
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
-                        android:id="@+id/next1"
-                        android:text="Sign up"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_orange"/>
+                        android:id="@+id/signupPatient"
+                        android:background="@drawable/button_orange">
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="#fff"
+                            android:id="@+id/progressPatientReg"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/nexterPatient"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:id="@+id/nexterPatient"
+                            android:text="Sign up"
+                            android:textColor="#fff"
+                            android:textSize="14dp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montserratregular"
+                            android:textAllCaps="false"
+                            android:background="@null"/>
+
+                    </RelativeLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -601,6 +653,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Doctor ID Number *"
+                            android:id="@+id/edtDoctorID"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="number"
@@ -623,6 +676,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="First Name *"
+                            android:id="@+id/edtFirstName"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -645,6 +699,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Last Name *"
+                            android:id="@+id/edtLastName"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -667,6 +722,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Display Name (Username) *"
+                            android:id="@+id/edtUsername"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -674,56 +730,82 @@
                             android:fontFamily="@font/montserratsemibold"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Email *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputEmail"
+                            android:layout_toLeftOf="@+id/checkEmail"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Email *"
+                                android:id="@+id/edtEmail"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
 
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkEmail"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Phone Number *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="number"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputPhone"
+                            android:layout_toLeftOf="@+id/checkPhone"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Phone Number *"
+                                android:id="@+id/edtPhoneNumber"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
 
-                    </com.google.android.material.textfield.TextInputLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkPhone"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
@@ -739,6 +821,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Medical Facility Name *"
+                            android:id="@+id/edtMedicalFacilityname"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textCapSentences"
@@ -752,6 +835,7 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectSpeciality"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -769,6 +853,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedSpeciality"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -788,6 +873,7 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectState"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -805,6 +891,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedState"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -824,6 +911,7 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectLGA"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -841,6 +929,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedLga"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -870,6 +959,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Password *"
+                            android:id="@+id/edtPassword"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textPassword"
@@ -893,6 +983,7 @@
                             android:layout_height="match_parent"
                             android:background="@android:color/transparent"
                             android:hint="Confirm Password *"
+                            android:id="@+id/edtConfirmPassword"
                             android:textColor="#000000"
                             android:textSize="12dp"
                             android:inputType="textPassword"
@@ -902,17 +993,34 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <Button
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:id="@+id/next2"
-                        android:text="Sign up"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_orange"/>
+                        android:background="@drawable/button_orange">
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="#fff"
+                            android:id="@+id/progressDoctorReg"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/nexter"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:id="@+id/nexter"
+                            android:text="Sign up"
+                            android:textColor="#fff"
+                            android:textSize="14dp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montserratregular"
+                            android:textAllCaps="false"
+                            android:background="@null"/>
+
+                    </RelativeLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1051,6 +1159,7 @@
                             android:hint="Facility Name *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtHospitalFacilityName"
                             android:inputType="textCapSentences"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1073,6 +1182,7 @@
                             android:hint="Facility UID Number *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtHospitalFacilityID"
                             android:inputType="number"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1095,57 +1205,8 @@
                             android:hint="Display Name (Username) *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtHospitalUsername"
                             android:inputType="textCapSentences"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Facility Email *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Facility Phone Number *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="number"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
 
@@ -1153,9 +1214,86 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputHospitalEmail"
+                            android:layout_toLeftOf="@+id/checkHospitalEmail"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Facility Email *"
+                                android:id="@+id/edtHospitalEmail"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkHospitalEmail"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputHospitalPhone"
+                            android:layout_toLeftOf="@+id/checkHospitalPhone"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Facility Phone Number *"
+                                android:id="@+id/edtHospitalPhoneNumber"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkHospitalPhone"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectHospitalState"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -1173,6 +1311,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedHospitalState"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -1192,6 +1331,7 @@
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectHospitalLGA"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -1209,6 +1349,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/selectedHospitalLga"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -1240,6 +1381,7 @@
                             android:hint="Password *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtHospitalPassword"
                             android:inputType="textPassword"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1263,6 +1405,7 @@
                             android:hint="Confirm Password *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtHospitalConfirmPassword"
                             android:inputType="textPassword"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1270,17 +1413,34 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <Button
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:id="@+id/next3"
-                        android:text="Sign up"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_orange"/>
+                        android:background="@drawable/button_orange">
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="#fff"
+                            android:id="@+id/progressHospitalReg"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/nexterHospital"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:id="@+id/nexterHospital"
+                            android:text="Sign up"
+                            android:textColor="#fff"
+                            android:textSize="14dp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montserratregular"
+                            android:textAllCaps="false"
+                            android:background="@null"/>
+
+                    </RelativeLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1418,6 +1578,7 @@
                             android:hint="Facility Name *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtPharmacyFacilityName"
                             android:inputType="textCapSentences"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1440,6 +1601,7 @@
                             android:hint="Facility ID Number *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtPharmacyFacilityId"
                             android:inputType="number"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1462,57 +1624,8 @@
                             android:hint="Display Name (Username) *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtPharmacyFacilityUsername"
                             android:inputType="textCapSentences"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Facility Email *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="textEmailAddress"
-                            android:singleLine="true"
-                            android:fontFamily="@font/montserratsemibold"/>
-
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:background="@drawable/white_card2"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:passwordToggleEnabled="true"
-                        app:passwordToggleTint="#058523"
-                        app:passwordToggleDrawable="@drawable/circle_check"
-                        app:hintTextColor="@color/red">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@android:color/transparent"
-                            android:hint="Facility Phone Number *"
-                            android:textColor="#000000"
-                            android:textSize="12dp"
-                            android:inputType="number"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
 
@@ -1520,9 +1633,86 @@
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputPharmacyEmail"
+                            android:layout_toLeftOf="@+id/checkPharmacyEmail"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Facility Email *"
+                                android:id="@+id/edtPharmacyEmail"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="textEmailAddress"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkPharmacyEmail"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@drawable/white_card2"
+                        android:layout_marginTop="10dp">
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:id="@+id/textinputPharmacyPhone"
+                            android:layout_toLeftOf="@+id/checkPharmacyPhone"
+                            app:hintTextColor="@color/red">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="@android:color/transparent"
+                                android:hint="Facility Phone Number *"
+                                android:id="@+id/edtPharmacyPhoneNumber"
+                                android:textColor="#000000"
+                                android:textSize="12dp"
+                                android:inputType="number"
+                                android:singleLine="true"
+                                android:fontFamily="@font/montserratsemibold"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:id="@+id/checkPharmacyPhone"
+                            android:visibility="gone"
+                            android:src="@drawable/circle_check"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="30dp"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
                         android:layout_marginTop="10dp"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
+                        android:id="@+id/selectDelivery"
                         android:background="@drawable/white_card2">
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -1540,6 +1730,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/txtPharmacySelectedDelivery"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -1557,6 +1748,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/selectPharmacyState"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
                         android:background="@drawable/white_card2">
@@ -1576,6 +1768,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/txtPharmacySelectedState"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -1593,6 +1786,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="10dp"
+                        android:id="@+id/selectPharmacyLGA"
                         android:paddingLeft="20dp"
                         android:paddingRight="35dp"
                         android:background="@drawable/white_card2">
@@ -1612,6 +1806,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="..."
+                                android:id="@+id/txtPharmacySelectedLga"
                                 android:paddingTop="5dp"
                                 android:paddingBottom="10dp"
                                 android:textColor="@color/black"
@@ -1643,6 +1838,7 @@
                             android:hint="Password *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtPharmacyPassword"
                             android:inputType="textPassword"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1666,6 +1862,7 @@
                             android:hint="Confirm Password *"
                             android:textColor="#000000"
                             android:textSize="12dp"
+                            android:id="@+id/edtPharmacyConfirmedPassword"
                             android:inputType="textPassword"
                             android:singleLine="true"
                             android:fontFamily="@font/montserratsemibold"/>
@@ -1673,17 +1870,34 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <Button
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
                         android:id="@+id/next4"
-                        android:text="Sign up"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:fontFamily="@font/montserratregular"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_orange"/>
+                        android:background="@drawable/button_orange">
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="#fff"
+                            android:id="@+id/progressPharmacyReg"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/nexterPharmacy"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:id="@+id/nexterPharmacy"
+                            android:text="Sign up"
+                            android:textColor="#fff"
+                            android:textSize="14dp"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/montserratregular"
+                            android:textAllCaps="false"
+                            android:background="@null"/>
+
+                    </RelativeLayout>
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1826,8 +2040,10 @@
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="abayomi.akinseye@e4email.net"
+                            android:text=".."
                             android:textSize="13dp"
+                            android:gravity="center"
+                            android:id="@+id/userEmail"
                             android:fontFamily="@font/montserratsemibold"
                             android:textColor="#B72025"/>
                     </LinearLayout>

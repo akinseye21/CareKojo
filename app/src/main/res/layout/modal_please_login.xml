@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,6 +16,18 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:background="@drawable/corner_popup">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true"
+            app:lottie_speed="1"
+            app:lottie_fileName="oops_animation.json"/>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +36,6 @@
             android:textSize="22dp"
             android:textColor="@color/red"
             android:layout_marginBottom="10dp"
-            android:layout_marginTop="70dp"
             android:fontFamily="@font/montserratbold"/>
 
         <TextView

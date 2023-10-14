@@ -49,6 +49,7 @@ dependencies {
 //    implementation 'com.airbnb.android:lottie:6.1.0'
     implementation 'com.airbnb.android:lottie:3.3.1'
     implementation 'com.daimajia.androidanimations:library:2.4@aar'
+    implementation 'com.github.razir.progressbutton:progressbutton:2.1.0'
 
 
 //    implementation fileTree(dir: 'libs', include: ['*.jar'])
