@@ -21,8 +21,11 @@ import java.util.List;
 
 import ng.com.carekojo.R;
 import ng.com.carekojo.fragments.DashboardFragment;
+import ng.com.carekojo.fragments.DashboardFragmentLoggedIn;
 import ng.com.carekojo.fragments.HomeFragment;
+import ng.com.carekojo.fragments.HomeFragmentLoggedIn;
 import ng.com.carekojo.fragments.LocateFragment;
+import ng.com.carekojo.fragments.LocateFragmentLoggedIn;
 
 public class LoggedInPage extends AppCompatActivity {
 
@@ -63,7 +66,7 @@ public class LoggedInPage extends AppCompatActivity {
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoggedInPage.this, SideMenu.class));
+                startActivity(new Intent(LoggedInPage.this, SideMenuLoggedIn.class));
 //                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_in_right);
             }
         });
@@ -77,9 +80,9 @@ public class LoggedInPage extends AppCompatActivity {
 
     private void addTabs(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFrag(new HomeFragment(), "Home", 0);
-        adapter.addFrag(new DashboardFragment(), "Dashboard", 1);
-        adapter.addFrag(new LocateFragment(), "Locate", 2);
+        adapter.addFrag(new HomeFragmentLoggedIn(), "Home", 0);
+        adapter.addFrag(new DashboardFragmentLoggedIn(), "Dashboard", 1);
+        adapter.addFrag(new LocateFragmentLoggedIn(), "Locate", 2);
         viewPager.setAdapter(adapter);
     }
 

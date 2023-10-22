@@ -28,6 +28,8 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:fontFamily="@font/montserratbold"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
             android:text="X"
             android:textColor="#707070"
             android:textSize="20dp" />

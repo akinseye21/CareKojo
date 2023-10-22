@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.HomeFragment">
+    tools:context=".fragments.HomeFragmentLoggedIn">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,8 +35,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Guest!"
+                        android:text="Akinseye"
                         android:textSize="28dp"
+                        android:id="@+id/username"
                         android:textColor="#B72025"
                         android:fontFamily="@font/montserratbold"/>
 
@@ -99,8 +100,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginLeft="20dp"
                     android:src="@drawable/advance_search"
-                    android:layout_alignParentEnd="true"
-                    android:onClick="pleaseLogin"/>
+                    android:layout_alignParentEnd="true"/>
             </RelativeLayout>
             <TextView
                 android:layout_width="wrap_content"
@@ -168,8 +168,7 @@
                         android:layout_gravity="center"
                         android:gravity="center"
                         android:padding="20dp"
-                        android:background="@drawable/white_card"
-                        android:onClick="pleaseLogin">
+                        android:background="@drawable/white_card">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="70dp">
@@ -283,8 +282,7 @@
                         android:gravity="center"
                         android:padding="20dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@drawable/white_card"
-                        android:onClick="pleaseLogin">
+                        android:background="@drawable/white_card">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="70dp">
@@ -398,8 +396,7 @@
                         android:gravity="center"
                         android:padding="20dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@drawable/white_card"
-                        android:onClick="pleaseLogin">
+                        android:background="@drawable/white_card">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="70dp">
@@ -513,8 +510,7 @@
                         android:gravity="center"
                         android:padding="20dp"
                         android:layout_marginLeft="20dp"
-                        android:background="@drawable/white_card"
-                        android:onClick="pleaseLogin">
+                        android:background="@drawable/white_card">
                         <RelativeLayout
                             android:layout_width="wrap_content"
                             android:layout_height="70dp">
@@ -669,9 +665,9 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:gravity="center"
+                    android:id="@+id/location"
                     android:layout_centerVertical="true"
-                    android:layout_alignParentEnd="true"
-                    android:onClick="pleaseLogin">
+                    android:layout_alignParentEnd="true">
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
@@ -699,8 +695,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="15dp"
-                    android:background="@drawable/white_card2"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card2">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
@@ -763,8 +758,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/white_card2"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card2">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
@@ -827,8 +821,7 @@
                     android:layout_height="wrap_content"
                     android:padding="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/white_card2"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card2">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp"
@@ -895,7 +888,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
-                android:onClick="pleaseLogin">
+                android:id="@+id/seemore">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -911,6 +904,5 @@
 
         </LinearLayout>
     </ScrollView>
-
 
 </FrameLayout>

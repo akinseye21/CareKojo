@@ -35,7 +35,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Lorem ipsum dolor sit amet, consetetur adipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et"
+                android:text="“Bring Care to your home in one click”\n
+Carekojo provides you with a wide range of services tailored to bring healthcare closer to you. You can search and request for medical services from our wide range of accredited healthcare providers.
+"
                 android:gravity="center"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"

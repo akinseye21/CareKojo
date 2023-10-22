@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.LocateFragment"
+    tools:context=".fragments.LocateFragmentLoggedIn"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -40,8 +40,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="35dp"
-                android:background="@drawable/white_card2"
-                android:onClick="pleaseLogin">
+                android:background="@drawable/white_card2">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -77,8 +76,7 @@
                 android:layout_marginTop="20dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="35dp"
-                android:background="@drawable/white_card2"
-                android:onClick="pleaseLogin">
+                android:background="@drawable/white_card2">
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -142,7 +140,6 @@
                     android:textSize="14dp"
                     android:layout_alignParentStart="true"
                     android:id="@+id/nearyou"
-                    android:onClick="pleaseLogin"
                     android:fontFamily="@font/montserratregular"/>
 
                 <Button
@@ -155,7 +152,6 @@
                     android:text="Others"
                     android:textAllCaps="false"
                     android:textColor="#707070"
-                    android:onClick="pleaseLogin"
                     android:textSize="14dp" />
             </RelativeLayout>
             <TextView
@@ -181,8 +177,7 @@
                     android:background="@drawable/white_card"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="20dp"
-                    android:onClick="pleaseLogin">
+                    android:padding="20dp">
 
                     <RelativeLayout
                         android:layout_width="wrap_content"
@@ -319,8 +314,7 @@
                     android:gravity="center"
                     android:padding="20dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/white_card"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp">
@@ -449,8 +443,7 @@
                     android:gravity="center"
                     android:padding="20dp"
                     android:layout_alignParentStart="true"
-                    android:background="@drawable/white_card"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp">
@@ -572,8 +565,7 @@
                     android:gravity="center"
                     android:padding="20dp"
                     android:layout_alignParentEnd="true"
-                    android:background="@drawable/white_card"
-                    android:onClick="pleaseLogin">
+                    android:background="@drawable/white_card">
                     <RelativeLayout
                         android:layout_width="wrap_content"
                         android:layout_height="70dp">
@@ -701,8 +693,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/white_card2"
-                android:onClick="pleaseLogin">
+                android:background="@drawable/white_card2">
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"
@@ -770,8 +761,7 @@
                 android:layout_height="wrap_content"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/white_card2"
-                android:onClick="pleaseLogin">
+                android:background="@drawable/white_card2">
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="70dp"

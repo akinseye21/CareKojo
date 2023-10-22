@@ -37,6 +37,14 @@ public class SideMenu extends AppCompatActivity {
         faq = findViewById(R.id.linfaq);
         terms = findViewById(R.id.linterms);
 
+
+        blog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SideMenu.this, BlogArticles.class));
+            }
+        });
+
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
