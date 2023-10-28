@@ -149,17 +149,34 @@
                             android:fontFamily="@font/montserratsemibold"/>
 
                     </com.google.android.material.textfield.TextInputLayout>
-                    <Button
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
                         android:layout_marginTop="20dp"
-                        android:text="Login"
-                        android:textColor="#fff"
-                        android:textSize="14dp"
-                        android:id="@+id/btnLogin"
-                        android:fontFamily="@font/montserratregular"
-                        android:textAllCaps="false"
-                        android:background="@drawable/button_orange"/>
+                        android:id="@+id/relbtnlogin"
+                        android:background="@drawable/button_orange">
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:indeterminateTint="#fff"
+                            android:id="@+id/progressLogin"
+                            android:visibility="gone"
+                            android:layout_toRightOf="@+id/btnLogin"
+                            android:layout_centerVertical="true"/>
+
+                        <Button
+                            android:id="@+id/btnLogin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="60dp"
+                            android:layout_centerInParent="true"
+                            android:background="@null"
+                            android:fontFamily="@font/montserratregular"
+                            android:text="Login"
+                            android:textAllCaps="false"
+                            android:textColor="#fff"
+                            android:textSize="14dp" />
+
+                    </RelativeLayout>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

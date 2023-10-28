@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/drawable/ic_dashboard.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/ic_ic3.xml" value="0.115" />
+        <entry key="app/src/main/res/drawable/ic_locate.xml" value="0.1375" />
         <entry key="app/src/main/res/drawable/ic_logo.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/saved.xml" value="0.1375" />
         <entry key="app/src/main/res/drawable/search_bg.xml" value="0.115" />
@@ -24,7 +25,7 @@
         <entry key="app/src/main/res/drawable/terms.xml" value="0.1375" />
         <entry key="app/src/main/res/drawable/white_card.xml" value="0.115" />
         <entry key="app/src/main/res/drawable/white_card2.xml" value="0.115" />
-        <entry key="app/src/main/res/layout/activity_blog_articles.xml" value="0.28229166666666666" />
+        <entry key="app/src/main/res/layout/activity_blog_articles.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/activity_guest_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_logged_in_page.xml" value="0.28229166666666666" />
@@ -43,6 +44,7 @@
         <entry key="app/src/main/res/layout/fragment_locate_logged_in.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/list_item.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/modal_lga.xml" value="0.26614583333333336" />
+        <entry key="app/src/main/res/layout/modal_logout.xml" value="0.28125" />
         <entry key="app/src/main/res/layout/modal_please_login.xml" value="0.25157232704402516" />
         <entry key="app/src/main/res/layout/modal_specialities.xml" value="0.28229166666666666" />
         <entry key="app/src/main/res/layout/modal_states.xml" value="0.28125" />

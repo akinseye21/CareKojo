@@ -18,6 +18,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -53,38 +54,49 @@ public class GuestPage extends AppCompatActivity implements
 
         //view pager and tab layout
         viewPager = findViewById(R.id.viewpager);
+        viewPager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return true; // Disable swipe gestures
+            }
+        });
         addTabs(viewPager);
         tabLayout = findViewById(R.id.tablayout);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#B72020")));
-//                if (tab.getPosition()==1){
-//                    Dialog dialog = new Dialog(GuestPage.this);
-//                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//                    dialog.setContentView(R.layout.modal_please_login);
-//
-//                    Button login = dialog.findViewById(R.id.login);
-//                    login.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View view) {
-//                            dialog.dismiss();
-//                            startActivity(new Intent(GuestPage.this, LoginPage.class));
-//                        }
-//                    });
-//
-//                    dialog.show();
-//                    dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-//                    dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-//                    dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-//                    dialog.getWindow().setGravity(Gravity.BOTTOM);
-//                }
+//                tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#B72020")));
+
+                Dialog dialog = new Dialog(GuestPage.this);
+                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                dialog.setContentView(R.layout.modal_please_login);
+
+                Button login = dialog.findViewById(R.id.login);
+                login.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                        startActivity(new Intent(GuestPage.this, LoginPage.class));
+                    }
+                });
+
+                dialog.show();
+                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                dialog.getWindow().setGravity(Gravity.BOTTOM);
+
             }
 
             @Override
             public void onTabUnselected(TabLayout.Tab tab) {
-                tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#707070")));
+                if (tab.getPosition() == 0){
+                    tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#B72020")));
+                }else{
+                    tab.getIcon().setTintList(ColorStateList.valueOf(Color.parseColor("#707070")));
+                }
+
             }
 
             @Override
@@ -92,8 +104,8 @@ public class GuestPage extends AppCompatActivity implements
 
             }
         });
-        setupTabIcons();
 
+        setupTabIcons();
         menu = findViewById(R.id.menu);
         menu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -113,8 +125,8 @@ public class GuestPage extends AppCompatActivity implements
     private void addTabs(ViewPager viewPager) {
         GuestPage.ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFrag(new HomeFragment(), "Home", 0);
-        adapter.addFrag(new DashboardFragment(), "Dashboard", 1);
-        adapter.addFrag(new LocateFragment(), "Locate", 2);
+        adapter.addFrag(new HomeFragment(), "Dashboard", 1);
+        adapter.addFrag(new HomeFragment(), "Locate", 2);
         viewPager.setAdapter(adapter);
     }
 
@@ -180,5 +192,6 @@ public class GuestPage extends AppCompatActivity implements
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+
 
 }

@@ -600,36 +600,40 @@
                                 android:layout_centerHorizontal="true"
                                 android:layout_alignParentBottom="true"/>
                         </RelativeLayout>
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="15dp"
-                            android:layout_toRightOf="@+id/three">
+                            android:layout_toRightOf="@+id/three"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/montserratsemibold"
                                 android:text="Blood Transfusion Processes"
-                                android:textSize="14dp"
                                 android:textColor="#707070"
-                                android:fontFamily="@font/montserratsemibold"/>
+                                android:textSize="14dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/montserratsemibold"
                                 android:text="12th September 2021"
-                                android:textSize="12dp"
                                 android:textColor="#707070A6"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/montserratsemibold"/>
+                                android:textSize="12dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="23 Views"
-                                android:textSize="12dp"
-                                android:textColor="#B72020"
                                 android:layout_marginTop="10dp"
-                                android:fontFamily="@font/montserratsemibold"/>
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="23 Views"
+                                android:textColor="#B72020"
+                                android:textSize="12dp" />
 
                         </LinearLayout>
                         <ImageView

@@ -12,14 +12,15 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:padding="20dp">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/montserratsemibold"
             android:text="Profile"
             android:textColor="#200F0F"
-            android:fontFamily="@font/montserratsemibold"
-            android:layout_alignParentStart="true"
-            android:textSize="24dp"/>
+            android:textSize="24dp" />
 
         <TextView
             android:id="@+id/close"
@@ -28,9 +29,9 @@
             android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:fontFamily="@font/montserratbold"
-            android:text="X"
-            android:paddingRight="10dp"
             android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="X"
             android:textColor="#707070"
             android:textSize="20dp" />
     </RelativeLayout>
@@ -38,9 +39,11 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -52,47 +55,56 @@
                     android:layout_alignParentEnd="true"
                     android:src="@drawable/ic_ic3"
                     app:tint="#40707070" />
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="20dp">
+                    android:layout_margin="20dp"
+                    android:orientation="vertical">
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:layout_width="40dp"
                             android:layout_height="40dp"
-                            android:src="@drawable/ic1"
-                            android:layout_alignParentStart="true"/>
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/ic1" />
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
                             android:layout_centerVertical="true"
-                            android:layout_marginLeft="55dp">
+                            android:layout_marginLeft="55dp"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="User 001"
                                 android:fontFamily="@font/montserratsemibold"
-                                android:textSize="16dp"
-                                android:textColor="#200F0F"/>
+                                android:id="@+id/fullname"
+                                android:text="User 001"
+                                android:textColor="#200F0F"
+                                android:textSize="16dp" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="\@user001"
                                 android:fontFamily="@font/montserratregular"
-                                android:textSize="12dp"
-                                android:textColor="#200F0F"/>
+                                android:id="@+id/username"
+                                android:textAllCaps="false"
+                                android:text="\@user001"
+                                android:textColor="#200F0F"
+                                android:textSize="12dp" />
                         </LinearLayout>
+
                         <ImageView
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"
-                            android:src="@drawable/ic_edit"/>
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_edit" />
                     </RelativeLayout>
 
 
@@ -103,38 +115,44 @@
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/gradient_red_bg"
                         android:padding="25dp">
+
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:layout_alignParentStart="true">
+                            android:layout_alignParentStart="true"
+                            android:orientation="vertical">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Available Balance"
                                 android:fontFamily="@font/montserratregular"
-                                android:textSize="12dp"
-                                android:textColor="#fff"/>
+                                android:text="Available Balance"
+                                android:textColor="#fff"
+                                android:textSize="12dp" />
+
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:gravity="center_vertical"
                                 android:orientation="horizontal">
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:fontFamily="@font/montserratsemibold"
                                     android:text="NGN"
-                                    android:textSize="12dp"
                                     android:textColor="#fff"
-                                    android:fontFamily="@font/montserratsemibold"/>
+                                    android:textSize="12dp" />
+
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="0.00"
-                                    android:textSize="25dp"
-                                    android:textColor="#fff"
                                     android:layout_marginLeft="5dp"
-                                    android:fontFamily="@font/montserratsemibold"/>
+                                    android:fontFamily="@font/montserratsemibold"
+                                    android:id="@+id/totalbalance"
+                                    android:text="0.00"
+                                    android:textColor="#fff"
+                                    android:textSize="25dp" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -163,15 +181,15 @@
                     </RelativeLayout>
 
 
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/montserratsemibold"
                         android:text="Dashboard"
                         android:textColor="#707070"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:layout_marginBottom="10dp"/>
+                        android:textSize="15dp" />
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -179,299 +197,342 @@
                         android:orientation="vertical"
                         android:padding="20dp">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_appointment"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Appointments"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:id="@+id/linsignup"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/bookmark"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Favourites"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:id="@+id/linaboutus"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/cart"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Orders"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:id="@+id/linblog"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_payment_history"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Payment History"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:id="@+id/linsupport"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/saved"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Saved Medical Articles"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="General"
-                        android:textColor="#707070"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="20dp"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/white_card2"
-                        android:orientation="vertical"
-                        android:padding="20dp">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_settings"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Settings"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/about_us"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="About Us"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:id="@+id/blogarticles"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/about_us"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Blog Articles"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_contact_support"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Contact Support"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:background="#F8F8F8"/>
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:paddingBottom="15dp"
-                            android:paddingTop="15dp"
-                            android:orientation="horizontal">
-                            <ImageView
-                                android:layout_width="16dp"
-                                android:layout_height="16dp"
-                                android:src="@drawable/ic_faq"/>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="FAQs"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
-                                android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Legal"
-                        android:textColor="#707070"
-                        android:textSize="15dp"
-                        android:fontFamily="@font/montserratsemibold"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="20dp"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/white_card2"
-                        android:orientation="vertical"
-                        android:padding="20dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="horizontal"
-                            android:id="@+id/linterms">
+                            android:paddingBottom="15dp">
+
                             <ImageView
                                 android:layout_width="16dp"
                                 android:layout_height="16dp"
-                                android:src="@drawable/terms"/>
+                                android:src="@drawable/ic_appointment" />
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Terms and Conditions"
-                                android:textColor="@color/red"
-                                android:textSize="12dp"
+                                android:layout_marginLeft="20dp"
                                 android:fontFamily="@font/montserratsemibold"
-                                android:layout_marginLeft="20dp"/>
+                                android:text="Appointments"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:id="@+id/linsignup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/bookmark" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Favourites"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:id="@+id/linaboutus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/cart" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Orders"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:id="@+id/linblog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_payment_history" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Payment History"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:id="@+id/linsupport"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/saved" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Saved Medical Articles"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="General"
+                        android:textColor="#707070"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_card2"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_settings" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Settings"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/about_us" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="About Us"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:id="@+id/blogarticles"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/about_us" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Blog Articles"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_contact_support" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Contact Support"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F8F8F8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/ic_faq" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="FAQs"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="  Sign Out"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/montserratsemibold"
+                        android:text="Legal"
                         android:textColor="#707070"
-                        android:textSize="15dp"
-                        android:padding="10dp"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/white_card2"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <LinearLayout
+                            android:id="@+id/linterms"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/terms" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:fontFamily="@font/montserratsemibold"
+                                android:text="Terms and Conditions"
+                                android:textColor="@color/red"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:id="@+id/signout"
                         android:drawableLeft="@drawable/ic_logout"
                         android:fontFamily="@font/montserratsemibold"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="20dp"/>
+                        android:padding="10dp"
+                        android:text="  Sign Out"
+                        android:textColor="#707070"
+                        android:textSize="15dp" />
 
                 </LinearLayout>
 
