@@ -65,7 +65,7 @@ public class Registration extends AppCompatActivity {
     ProgressBar progressDoctorReg, progressPatientRegistration, progressHospitalRegistration, progressPharmacyRegistration;
 
     ArrayList<String> arrayState = new ArrayList<>();
-    ArrayList<JSONArray> arrayLGA = new ArrayList<>();
+    ArrayList<String> arrayLGA = new ArrayList<>();
     int lgalength;
 
     @Override
@@ -126,7 +126,7 @@ public class Registration extends AppCompatActivity {
                     hospitalReg();
                 }else if (type.equals("Pharmacist")){
                     //show pharmacist view
-                    pharmacyReg();
+//                    pharmacyReg();
                 }
             }
         });
@@ -196,10 +196,12 @@ public class Registration extends AppCompatActivity {
 
         TextInputEditText edtFirstName, edtLastName, edtUsername, edtEmail, edtPhone, edtPassword, edtConfirmPassword;
         RelativeLayout selectState, selectLGA;
+        ProgressBar lgaloadingpatient;
         TextView txtState, txtLGA;
         ImageView checkEmail, checkPhone;
         Button regPatient;
 
+        lgaloadingpatient = findViewById(R.id.lgaloadingpatient);
         edtFirstName = findViewById(R.id.patientFirstName);
         edtFirstName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -345,41 +347,14 @@ public class Registration extends AppCompatActivity {
         selectLGA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //show the dialog
-                Dialog dialog = new Dialog(Registration.this);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.modal_lga);
-
-                ArrayList<String> myarray = new ArrayList<>();
-
-                ListView listView = dialog.findViewById(R.id.listView);
-                for (int i = 0; i < arrayState.size(); i++) {
-                    if (txtState.getText().toString().trim().equals(arrayState.get(i))){
-                        lgalength = arrayLGA.get(i).length();
-                        for (int j = 0; j < lgalength; j++) {
-                            try {
-                                String item = arrayLGA.get(i).getString(j);
-                                myarray.add(item);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
+                if (patientstate.equals("") || patientstate.equals("...")){
+                    //no state selected
+                    Toast.makeText(Registration.this, "Kindly select a state", Toast.LENGTH_SHORT).show();
+                }else{
+                    lgaloadingpatient.setVisibility(View.VISIBLE);
+                    arrayLGA.clear();
+                    getLGA(patientstate, lgaloadingpatient, "patient", txtLGA);
                 }
-                LGAAdapter lgaAdapter = new LGAAdapter(Registration.this, myarray, "patient", dialog);
-                listView.setAdapter(lgaAdapter);
-
-                dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialogInterface) {
-                        patientlga = txtLGA.getText().toString();
-                    }
-                });
             }
         });
 
@@ -469,6 +444,7 @@ public class Registration extends AppCompatActivity {
         ImageView back;
         TextInputEditText edtDoctorId, edtFirstName, edtLastName, edtUsername, edtEmail, edtPhone, edtMedicalFacilityName, edtPassword, edtConfirmPassword;
         RelativeLayout selectSpeciality, selectState, selectLGA;
+        ProgressBar lgaloadingdoctor;
         TextView txtSpeciality, txtState, txtLGA;
         ImageView checkEmail, checkPhone;
         Button regDoc;
@@ -482,6 +458,7 @@ public class Registration extends AppCompatActivity {
             }
         });
 
+        lgaloadingdoctor = findViewById(R.id.lgaloadingdoctor);
         edtDoctorId = findViewById(R.id.edtDoctorID);
         edtDoctorId.addTextChangedListener(new TextWatcher() {
             @Override
@@ -761,41 +738,15 @@ public class Registration extends AppCompatActivity {
         selectLGA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //show the dialog
-                Dialog dialog = new Dialog(Registration.this);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.modal_lga);
 
-                ArrayList<String> myarray = new ArrayList<>();
-
-                ListView listView = dialog.findViewById(R.id.listView);
-                for (int i = 0; i < arrayState.size(); i++) {
-                    if (txtState.getText().toString().trim().equals(arrayState.get(i))){
-                        lgalength = arrayLGA.get(i).length();
-                        for (int j = 0; j < lgalength; j++) {
-                            try {
-                                String item = arrayLGA.get(i).getString(j);
-                                myarray.add(item);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
+                if(state.equals("") || state.equals("...")){
+                    //no state selected
+                    Toast.makeText(Registration.this, "Kindly select a state", Toast.LENGTH_SHORT).show();
+                }else{
+                    lgaloadingdoctor.setVisibility(View.VISIBLE);
+                    arrayLGA.clear();
+                    getLGA(state, lgaloadingdoctor, "doctor", txtLGA);
                 }
-                LGAAdapter lgaAdapter = new LGAAdapter(Registration.this, myarray, "doctor", dialog);
-                listView.setAdapter(lgaAdapter);
-
-                dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialogInterface) {
-                        lga = txtLGA.getText().toString();
-                    }
-                });
             }
         });
 
@@ -896,10 +847,12 @@ public class Registration extends AppCompatActivity {
 
         TextInputEditText edtHospitalName, edtHospitalId, edtHospitalUsername, edtHospitalEmail, edtHospitalPhone, edtHospitalPassword, edtHospitalConfirmPassword;
         RelativeLayout selectHospitalState, selectHospitalLGA;
+        ProgressBar lgaloadinghospital;
         TextView txtHospitalState, txtHospitalLGA;
         ImageView checkHospitalEmail, checkHospitalPhone;
         Button nexterHospital;
 
+        lgaloadinghospital = findViewById(R.id.lgaloadinghospital);
         edtHospitalName = findViewById(R.id.edtHospitalFacilityName);
         edtHospitalName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -1045,41 +998,14 @@ public class Registration extends AppCompatActivity {
         selectHospitalLGA.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //show the dialog
-                Dialog dialog = new Dialog(Registration.this);
-                dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                dialog.setContentView(R.layout.modal_lga);
-
-                ArrayList<String> myarray = new ArrayList<>();
-
-                ListView listView = dialog.findViewById(R.id.listView);
-                for (int i = 0; i < arrayState.size(); i++) {
-                    if (txtHospitalState.getText().toString().trim().equals(arrayState.get(i))){
-                        lgalength = arrayLGA.get(i).length();
-                        for (int j = 0; j < lgalength; j++) {
-                            try {
-                                String item = arrayLGA.get(i).getString(j);
-                                myarray.add(item);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                    }
+                if(hospitalstate.equals("") || hospitalstate.equals("...")){
+                    //no state selected
+                    Toast.makeText(Registration.this, "Kindly select a state", Toast.LENGTH_SHORT).show();
+                }else{
+                    lgaloadinghospital.setVisibility(View.VISIBLE);
+                    arrayLGA.clear();
+                    getLGA(hospitalstate, lgaloadinghospital, "hospital", txtHospitalLGA);
                 }
-                LGAAdapter lgaAdapter = new LGAAdapter(Registration.this, myarray, "hospital", dialog);
-                listView.setAdapter(lgaAdapter);
-
-                dialog.show();
-                dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-                dialog.getWindow().setGravity(Gravity.BOTTOM);
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialogInterface) {
-                        hospitallga = txtHospitalLGA.getText().toString();
-                    }
-                });
             }
         });
 
@@ -1373,12 +1299,12 @@ public class Registration extends AppCompatActivity {
                     if (txtPharmacyState.getText().toString().trim().equals(arrayState.get(i))){
                         lgalength = arrayLGA.get(i).length();
                         for (int j = 0; j < lgalength; j++) {
-                            try {
-                                String item = arrayLGA.get(i).getString(j);
-                                myarray.add(item);
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+//                            try {
+//                                String item = arrayLGA.get(i).getString(j);
+//                                myarray.add(item);
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
                         }
                     }
                 }
@@ -1496,10 +1422,81 @@ public class Registration extends AppCompatActivity {
         });
     }
 
+    //register Patients
+    private void registersPatient(){
+        // Show progress with "Loading" text
+        progressPatientRegistration.setVisibility(View.VISIBLE);
 
+        JSONObject jsonPatient = new JSONObject();
+        try {
+            jsonPatient.put("username", patientusername);
+            jsonPatient.put("email", patientemail);
+            jsonPatient.put("first_name", patientfirstName);
+            jsonPatient.put("last_name", patientlastName);
+//            jsonPatient.put("role", "patient");
+            jsonPatient.put("password", patientpassword);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JSONObject combinedJson = new JSONObject();
+        try {
+//            combinedJson.put("patient", jsonPatient);
+            combinedJson.put("user", jsonPatient);
+            combinedJson.put("phone_number", patientphone);
+            combinedJson.put("state", patientstate);
+            combinedJson.put("l_g_a", patientlga);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        // Create a request
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "https://api.carekojo.e4eweb.space/patient_profile/", combinedJson,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        // Handle the response
+                        System.out.println("Patient Registration response = "+response);
+                        progressPatientRegistration.setVisibility(View.GONE);
+
+                        patientRegistration.setVisibility(View.GONE);
+                        verify.setVisibility(View.VISIBLE);
+                        verifyUser(patientemail);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        // Handle errors
+                        System.out.println("Patient Registration Error response = "+volleyError);
+                        progressPatientRegistration.setVisibility(View.GONE);
+
+                        Toast.makeText(Registration.this, "Failed to register Patient", Toast.LENGTH_SHORT).show();
+                        if (volleyError.networkResponse != null){
+                            byte[] responseData = volleyError.networkResponse.data;
+                            if (responseData != null) {
+                                String new_response = new String(responseData);
+                                System.out.println("Registration error response = "+new_response);
+                            }
+                        }
+                        volleyError.printStackTrace();
+                    }
+                });
+        // Add the request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        request.setRetryPolicy(retryPolicy);
+        requestQueue.add(request);
+        requestQueue.addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
+            @Override
+            public void onRequestFinished(Request<Object> request) {
+                requestQueue.getCache().clear();
+            }
+        });
+    }
 
     //register Doctors
-    public void registerDoctor(){
+    private void registerDoctor(){
         // Show progress with "Loading" text
         progressDoctorReg.setVisibility(View.VISIBLE);
 
@@ -1517,10 +1514,11 @@ public class Registration extends AppCompatActivity {
 
         JSONObject combinedJson = new JSONObject();
         try {
-            combinedJson.put("doctor", jsonDoctor);
+//            combinedJson.put("doctor", jsonDoctor);
+            combinedJson.put("user", jsonDoctor);
             combinedJson.put("doctor_id_number", doctorID);
             combinedJson.put("phone_number", phone);
-            combinedJson.put("medical_facility", facilityName);
+//            combinedJson.put("medical_facility", facilityName);
             combinedJson.put("specialty", speciality);
             combinedJson.put("state", state);
             combinedJson.put("l_g_a", lga);
@@ -1575,79 +1573,7 @@ public class Registration extends AppCompatActivity {
     }
 
     //register Patients
-    public void registersPatient(){
-        // Show progress with "Loading" text
-        progressPatientRegistration.setVisibility(View.VISIBLE);
-
-        JSONObject jsonPatient = new JSONObject();
-        try {
-            jsonPatient.put("username", patientusername);
-            jsonPatient.put("email", patientemail);
-            jsonPatient.put("first_name", patientfirstName);
-            jsonPatient.put("last_name", patientlastName);
-//            jsonPatient.put("role", "patient");
-            jsonPatient.put("password", patientpassword);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        JSONObject combinedJson = new JSONObject();
-        try {
-            combinedJson.put("patient", jsonPatient);
-            combinedJson.put("phone_number", patientphone);
-            combinedJson.put("state", patientstate);
-            combinedJson.put("l_g_a", patientlga);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        // Create a request
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.POST, "https://api.carekojo.e4eweb.space/patient_profile/", combinedJson,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        // Handle the response
-                        System.out.println("Patient Registration response = "+response);
-                        progressPatientRegistration.setVisibility(View.GONE);
-
-                        patientRegistration.setVisibility(View.GONE);
-                        verify.setVisibility(View.VISIBLE);
-                        verifyUser(patientemail);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError volleyError) {
-                        // Handle errors
-                        System.out.println("Doctor Registration Error response = "+volleyError);
-                        progressPatientRegistration.setVisibility(View.GONE);
-
-                        Toast.makeText(Registration.this, "Failed to register Patient", Toast.LENGTH_SHORT).show();
-                        if (volleyError.networkResponse != null){
-                            byte[] responseData = volleyError.networkResponse.data;
-                            if (responseData != null) {
-                                String new_response = new String(responseData);
-                                System.out.println("Registration error response = "+new_response);
-                            }
-                        }
-                        volleyError.printStackTrace();
-                    }
-                });
-        // Add the request to the queue
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        request.setRetryPolicy(retryPolicy);
-        requestQueue.add(request);
-        requestQueue.addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
-            @Override
-            public void onRequestFinished(Request<Object> request) {
-                requestQueue.getCache().clear();
-            }
-        });
-    }
-
-    //register Patients
-    public void registersHospital(){
+    private void registersHospital(){
         // Show progress with "Loading" text
         progressHospitalRegistration.setVisibility(View.VISIBLE);
 
@@ -1720,7 +1646,7 @@ public class Registration extends AppCompatActivity {
     }
 
     //register Pharmacy
-    public void registersPharmacy(){
+    private void registersPharmacy(){
         // Show progress with "Loading" text
         progressPharmacyRegistration.setVisibility(View.VISIBLE);
 
@@ -1738,7 +1664,8 @@ public class Registration extends AppCompatActivity {
 
         JSONObject combinedJson = new JSONObject();
         try {
-            combinedJson.put("pharmacy", jsonPharmacy);
+//            combinedJson.put("pharmacy", jsonPharmacy);
+            combinedJson.put("user", jsonPharmacy);
             combinedJson.put("phone_number", pharmacyphone);
             combinedJson.put("id_number", pharmacyID);
             combinedJson.put("state", pharmacystate);
@@ -1795,24 +1722,145 @@ public class Registration extends AppCompatActivity {
 
     //get states and lgas
     private void getStatesandLga() {
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://api.carekojo.e4eweb.space/states/",
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://api.carekojo.e4eweb.space/states/",
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        System.out.println("Notification response states = "+response);
+//                        try {
+//                            JSONArray jsonArray = new JSONArray(response);
+//                            for (int i = 0; i < jsonArray.length(); i++) {
+//                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                                String state = jsonObject.getString("name");
+//                                String lga = jsonObject.getString("lgas");
+//                                //add to the arraylist
+//                                arrayState.add(state);
+//                                arrayLGA.add(lga);
+//
+////                                JSONArray arrayLga = new JSONArray(lga);
+////
+////                                arrayLGA.add(arrayLga);
+//                            }
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                },
+//                new Response.ErrorListener() {
+//                    @Override
+//                    public void onErrorResponse(VolleyError volleyError) {
+//                        volleyError.printStackTrace();
+//                    }
+//                }){
+//            @Override
+//            protected Map<String, String> getParams(){
+//                Map<String, String> params = new HashMap<>();
+//                params.put("Content-Type", "application/json");
+//                return params;
+//            }
+//        };
+//
+//        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+//        DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+//        stringRequest.setRetryPolicy(retryPolicy);
+//        requestQueue.add(stringRequest);
+//        requestQueue.addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
+//            @Override
+//            public void onRequestFinished(Request<Object> request) {
+//                requestQueue.getCache().clear();
+//            }
+//        });
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://nga-states-lga.onrender.com/fetch",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        System.out.println("Notification response = "+response);
+                        System.out.println("State response states = "+response);
                         try {
                             JSONArray jsonArray = new JSONArray(response);
                             for (int i = 0; i < jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                String state = jsonObject.getString("name");
-                                //add to the arraylist
+                                String state = jsonArray.getString(i);
                                 arrayState.add(state);
-                                String lga = jsonObject.getString("lgas");
-                                JSONArray arrayLga = new JSONArray(lga);
-
-                                arrayLGA.add(arrayLga);
                             }
 
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError volleyError) {
+                        volleyError.printStackTrace();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams(){
+                Map<String, String> params = new HashMap<>();
+                params.put("Content-Type", "application/json");
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        DefaultRetryPolicy retryPolicy = new DefaultRetryPolicy(0, -1, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
+        stringRequest.setRetryPolicy(retryPolicy);
+        requestQueue.add(stringRequest);
+        requestQueue.addRequestFinishedListener(new RequestQueue.RequestFinishedListener<Object>() {
+            @Override
+            public void onRequestFinished(Request<Object> request) {
+                requestQueue.getCache().clear();
+            }
+        });
+    }
+
+    private void getLGA(String state, ProgressBar lgaloading, String role, TextView textType){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, "https://nga-states-lga.onrender.com/?state="+state,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println("LGA response states = "+response);
+                        try {
+                            JSONArray jsonArray = new JSONArray(response);
+                            for (int i = 0; i < jsonArray.length(); i++) {
+                                String lga = jsonArray.getString(i);
+                                arrayLGA.add(lga);
+                            }
+
+                            lgaloading.setVisibility(View.GONE);
+                            //show the dialog
+                            Dialog dialog = new Dialog(Registration.this);
+                            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                            dialog.setContentView(R.layout.modal_lga);
+
+                            ListView listView = dialog.findViewById(R.id.listView);
+                            LGAAdapter lgaAdapter = new LGAAdapter(Registration.this, arrayLGA, role, dialog);
+                            listView.setAdapter(lgaAdapter);
+
+                            dialog.show();
+                            dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                            dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                            dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+                            dialog.getWindow().setGravity(Gravity.BOTTOM);
+                            dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+                                @Override
+                                public void onDismiss(DialogInterface dialogInterface) {
+                                    if (role.equals("patient")){
+                                        patientlga = textType.getText().toString();
+                                    }
+                                    else if (role.equals("doctor")) {
+                                         lga = textType.getText().toString();
+                                    }
+                                    else if (role.equals("hospital")) {
+                                        hospitallga = textType.getText().toString();
+                                    }
+                                    else if (role.equals("pharmacy")) {
+                                        pharmacylga = textType.getText().toString();
+                                    }
+
+                                }
+                            });
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

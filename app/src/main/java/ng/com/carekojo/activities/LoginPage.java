@@ -36,6 +36,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import ng.com.carekojo.R;
+import ng.com.carekojo.handlers.SessionManager;
 
 public class LoginPage extends AppCompatActivity {
 
@@ -158,31 +159,51 @@ public class LoginPage extends AppCompatActivity {
     private void loginFunction() {
         progresslogin.setVisibility(View.VISIBLE);
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://api.carekojo.e4eweb.space/log_in/",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://api.carekojo.e4eweb.space/api/login/",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
 
+                        System.out.println("onResponse: " + response);
+
                         try{
                             JSONObject jsonObject = new JSONObject(response);
-                            String refresh = jsonObject.getString("refresh");
-                            String access = jsonObject.getString("access");
-                            String id = jsonObject.getString("id");
-                            String email = jsonObject.getString("email");
-                            String first_name = jsonObject.getString("first_name");
-                            String last_name = jsonObject.getString("last_name");
-                            String username = jsonObject.getString("username");
-                            String picture = jsonObject.getString("picture");
+                            String role = jsonObject.getString("role");
+                            if (role.equals("patient")){
 
-                            myEdit.putString("refresh", refresh);
-                            myEdit.putString("access", access);
-                            myEdit.putString("id", id);
-                            myEdit.putString("email", email);
-                            myEdit.putString("first_name", first_name);
-                            myEdit.putString("last_name", last_name);
-                            myEdit.putString("username", username);
-                            myEdit.putString("picture", picture);
-                            myEdit.commit();
+                                String refresh_token = jsonObject.getString("refresh");
+                                String access_token = jsonObject.getString("access");
+                                int patient_id = jsonObject.getInt("id");
+                                String email = jsonObject.getString("email");
+                                String first_name = jsonObject.getString("first_name");
+                                String last_name = jsonObject.getString("last_name");
+                                String username = jsonObject.getString("username");
+                                String picture = jsonObject.getString("picture");
+                                float wallet_balance = jsonObject.getLong("wallet_balance");
+
+                                SessionManager sessionManager = new SessionManager(LoginPage.this);
+                                sessionManager.saveTokens(access_token, refresh_token);
+
+                                myEdit.putInt("id", patient_id);
+                                myEdit.putString("email", email);
+                                myEdit.putString("first_name", first_name);
+                                myEdit.putString("last_name", last_name);
+                                myEdit.putString("username", username);
+                                myEdit.putString("picture", picture);
+                                myEdit.putString("role", role);
+                                myEdit.putFloat("wallet_balance", wallet_balance);
+                                myEdit.commit();
+
+
+
+                            }else if (role.equals("")){
+
+                            } else if (role.equals("")) {
+
+                            }
+
+
+
 
                             Intent intent = new Intent(LoginPage.this, LoggedInPage.class);
                             startActivity(intent);
@@ -202,14 +223,18 @@ public class LoginPage extends AppCompatActivity {
 
                         if (volleyError.networkResponse != null){
                             byte[] responseData = volleyError.networkResponse.data;
-                            try {
-                                JSONObject jsonObject = new JSONObject(new String(responseData));
-                                String detail = jsonObject.getString("detail");
-                                System.out.println("Login error = "+detail);
-                                Toast.makeText(LoginPage.this, detail, Toast.LENGTH_SHORT).show();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
-                            }
+                            System.out.println("Error message = "+volleyError);
+//                            try {
+//                                JSONArray jsonArray = new JSONArray(new String(responseData));
+//                                JSONObject jsonObject = new JSONObject(new String(responseData));
+//                                String detail = jsonObject.getString("detail");
+//                                System.out.println("Login error = "+jsonArray);
+//                                System.out.println("Login error = "+jsonObject);
+//                                Toast.makeText(LoginPage.this, jsonArray.toString(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(LoginPage.this, jsonObject.toString(), Toast.LENGTH_SHORT).show();
+//                            } catch (JSONException e) {
+//                                e.printStackTrace();
+//                            }
                         }
                         volleyError.printStackTrace();
                         progresslogin.setVisibility(View.GONE);

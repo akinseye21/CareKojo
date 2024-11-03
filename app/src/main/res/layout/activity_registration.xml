@@ -439,6 +439,14 @@
                             android:src="@drawable/arrow_down"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"/>
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:visibility="gone"
+                            android:id="@+id/lgaloadingpatient"/>
                     </RelativeLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -942,6 +950,15 @@
                             android:src="@drawable/arrow_down"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"/>
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:visibility="gone"
+                            android:id="@+id/lgaloadingdoctor"/>
+
                     </RelativeLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -1362,6 +1379,15 @@
                             android:src="@drawable/arrow_down"
                             android:layout_centerVertical="true"
                             android:layout_alignParentEnd="true"/>
+                        <ProgressBar
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="20dp"
+                            android:visibility="gone"
+                            android:id="@+id/lgaloadinghospital"/>
+
                     </RelativeLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
